@@ -1,0 +1,16 @@
+name: Cypress Qazando Testes
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 10,12,14,16 * * *'
+jobs: 
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
